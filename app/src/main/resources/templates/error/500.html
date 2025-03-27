@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>500 - Internal Server Error</title>
+    <link rel="stylesheet" th:href="@{/css/error/500.css}" />
+  </head>
+  <body>
+    <div class="error-container">
+      <h1>500</h1>
+      <p>Oops! Something went wrong on our server.</p>
+      <a th:href="@{/}" class="btn">Go Home</a>
+    </div>
+  </body>
+</html>

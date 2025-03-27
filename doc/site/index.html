@@ -1,0 +1,1376 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>NodeJS Technical Discovery</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-nodejs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="NodeJS Technical Discovery" class="md-header__button md-logo" aria-label="NodeJS Technical Discovery" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NodeJS Technical Discovery
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="NodeJS Technical Discovery" class="md-nav__button md-logo" aria-label="NodeJS Technical Discovery" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NodeJS Technical Discovery
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Node.js?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-nodejs-and-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Node.js and npm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Node.js and npm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is NPM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-yarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is YARN?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is YARN?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-will-we-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      What will we use?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-nodejs-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Node.js Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Node.js Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event-Driven Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-blocking-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-blocking I/O
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-nodejs-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Node.js Application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Node.js Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-initialize-a-new-nodejs-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Initialize a New Node.js Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-an-entry-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create an Entry File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-run-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Run the Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-using-an-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Using an HTTP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-installing-and-using-external-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Installing and Using External Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-using-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Using Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-working-with-a-simple-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Working with a Simple API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Working with a Simple API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules in Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules in Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Http Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fs-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fs Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Url Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-package-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Package in Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Package in Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-npm-node-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is NPM (Node Package Manager)?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is NPM (Node Package Manager)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-package-with-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Package with npm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dependencies-with-packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Dependencies with Package.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-programming-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming in Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous Programming in Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Callbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promises-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promises in Node.js
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Node.js?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-nodejs-and-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Node.js and npm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Node.js and npm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is NPM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-yarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is YARN?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is YARN?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-will-we-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      What will we use?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-nodejs-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Node.js Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Node.js Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event-Driven Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-blocking-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-blocking I/O
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-nodejs-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Node.js Application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Node.js Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-initialize-a-new-nodejs-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Initialize a New Node.js Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-an-entry-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Create an Entry File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-run-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Run the Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-using-an-http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Using an HTTP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-installing-and-using-external-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Installing and Using External Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-using-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Using Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-working-with-a-simple-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Working with a Simple API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7: Working with a Simple API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules in Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules in Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Http Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fs-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fs Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Url Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      OS Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events Module
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-package-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with Package in Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Package in Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-npm-node-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is NPM (Node Package Manager)?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is NPM (Node Package Manager)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-package-with-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Package with npm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-dependencies-with-packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Dependencies with Package.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-programming-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Programming in Node.js
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asynchronous Programming in Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Callbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promises-in-nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promises in Node.js
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="what-is-nodejs">What is Node.js?</h2>
+<p>NodeJS is a runtime environment for executing JavaScript outside the browser, built on the V8 JavaScript engine. It enables server-side development, supports asynchronous, event-driven programming, and efficiently handles scalable network applications.</p>
+<p>NodeJS is single-threaded, utilizing an event loop to handle multiple tasks concurrently.
+It is asynchronous and non-blocking, meaning operations do not wait for execution to complete.
+The V8 engine compiles JavaScript to machine code, making NodeJS fast and efficient.</p>
+<h1 id="environment-setup">Environment Setup</h1>
+<h2 id="installing-nodejs-and-npm">Installing Node.js and npm</h2>
+<p>To start with NodeJS we need to install and setup on our machine, at Photon we use MacOS operating system, and we will use MacOS method for installation.</p>
+<h3 id="what-is-npm">What is NPM?</h3>
+<p>NPM (Node Package Manager) is a package manager for NodeJS that helps developers install, share, and manage libraries and tools required for their NodeJS application. It’s an integral part of the NodeJS ecosystem and is automatically installed along with NodeJS. Other option from NPM we can use Yarn.</p>
+<h3 id="what-is-yarn">What is YARN?</h3>
+<p>Yarn is established open-source package manager use to manage dependencies in JavaScript project. It assists with the process of installing, updating, configuring and removing packages dependencies, eventually helping you reach your objectives faster with fewer distractions.</p>
+<p>Yarn focus of speed, correctness, security, and developer experience which we improve along every axis by leveraging a suite of innovative features such as workspaces, offline caching, parallel installs, hardened mode, interactive commands and more.</p>
+<h4 id="what-will-we-use">What will we use?</h4>
+<p>At Node JS Technical Discovery, will use NPM and installation method using Homebrew:</p>
+<p>Install Node.js using Homebrew:</p>
+<p>Homebrew is the most common package manager used on MacOS for managing open-source software. It’s easy to use and ensures that you get the last stable version of Node.js. Let’s check them step-by-step to download Node.js.</p>
+<ol>
+<li>Install Homebrew</li>
+</ol>
+<p>Open Terminal and run the following command to install homebrew latest version</p>
+<div class="highlight"><pre><span></span><code>/bin/bash -c &quot;$(curl –fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre></div>
+<ol>
+<li>Update brew</li>
+</ol>
+<p>Once Homebrew is installed, make sure it’s up to date by using the following command:</p>
+<div class="highlight"><pre><span></span><code>Brew update // Output e.g: Already up to date
+</code></pre></div>
+<ol>
+<li>Proceed to Install Node.Js</li>
+</ol>
+<p>Now run the following command to install Node.js:</p>
+<div class="highlight"><pre><span></span><code>Brew install node // Output e.g: node 23.10.0_1 is already installed and up-to-date.
+</code></pre></div>
+<p>Uninstall Node.js on MacOS:</p>
+<p>Remove Node.js using Homebrew using the following command:</p>
+<div class="highlight"><pre><span></span><code>brew uninstall node
+</code></pre></div>
+<h3 id="verifying-installation">Verifying Installation</h3>
+<p>Now run the following command to verify the installation:</p>
+<div class="highlight"><pre><span></span><code>node –v // Output e.g: v23.9.0
+
+npm –v // Output e.g: 10.9.2
+</code></pre></div>
+<h1 id="understanding-nodejs-architecture">Understanding Node.js Architecture</h1>
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVIN0LFk8=/?moveToViewport=-494,-133,1746,974&embedId=141188658529" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
+<h2 id="event-driven-architecture">Event-Driven Architecture</h2>
+<h2 id="non-blocking-io">Non-blocking I/O</h2>
+<h1 id="basic-nodejs-application">Basic Node.js Application</h1>
+<p>Writing a Basic “Hello World” Program</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before you start, ensure you have the following installed:</p>
+<div class="highlight"><pre><span></span><code>- Node.js (Download and install the latest LTS version)
+
+- A code editor (e.g., VS Code)
+
+- A terminal or command prompt
+</code></pre></div>
+<h2 id="step-1-initialize-a-new-nodejs-project">Step 1: Initialize a New Node.js Project</h2>
+<p>Open your terminal and create a new directory for your project:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>my-node-app
+<span class="nb">cd</span><span class="w"> </span>my-node-app
+</code></pre></div>
+<p>Initialize a new Node.js project:</p>
+<div class="highlight"><pre><span></span><code>npm init -y
+</code></pre></div>
+<p>This creates a package.json file with default configurations.</p>
+<h2 id="step-2-create-an-entry-file">Step 2: Create an Entry File</h2>
+<p>Create a new file named index.js in your project folder.</p>
+<p>Open index.js and add the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, Node.js!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="step-3-run-the-application">Step 3: Run the Application</h2>
+<p>In the terminal, navigate to your project folder (if not already inside it).</p>
+<p>Run the application using Node.js:</p>
+<div class="highlight"><pre><span></span><code>node index.js // Output e.g: Hello, Node.js!
+</code></pre></div>
+<h2 id="step-4-using-an-http-server">Step 4: Using an HTTP Server</h2>
+<p>To create a simple HTTP server, update index.js with the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">&quot;Hello, World!\n&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3000</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Server running at http://localhost:3000/&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Run the server:</p>
+<div class="highlight"><pre><span></span><code>node index.js
+</code></pre></div>
+<p>Open your browser and visit http://localhost:3000/ to see Hello, World!.</p>
+<p>Running your First Node.js Script</p>
+<h2 id="step-5-installing-and-using-external-packages">Step 5: Installing and Using External Packages</h2>
+<p>Node.js applications often use external packages. You can install packages using npm (Node Package Manager).</p>
+<p>Installing Express.js</p>
+<p>Express.js is a popular web framework for Node.js. Install it using:</p>
+<div class="highlight"><pre><span></span><code>npm install express
+</code></pre></div>
+<p>Creating an Express Server</p>
+<p>Replace the contents of index.js with:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello from Express!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server is running on http://localhost:</span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Run the application:</p>
+<div class="highlight"><pre><span></span><code>node index.js
+</code></pre></div>
+<p>Visit http://localhost:3000/ in your browser to see the response.</p>
+<h2 id="step-6-using-environment-variables">Step 6: Using Environment Variables</h2>
+<p>To manage configurations, use environment variables. Install dotenv:</p>
+<div class="highlight"><pre><span></span><code>npm install dotenv
+</code></pre></div>
+<p>Create a .env file:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">PORT</span><span class="o">=</span><span class="mf">4000</span>
+
+<span class="nx">Modify</span><span class="w"> </span><span class="nx">index</span><span class="p">.</span><span class="nx">js</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">environment</span><span class="w"> </span><span class="nx">variables</span><span class="o">:</span>
+
+<span class="nx">require</span><span class="p">(</span><span class="s2">&quot;dotenv&quot;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello, Express with dotenv!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server is running on http://localhost:</span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code>node index.js
+</code></pre></div>
+<p>Now, the app will run on port 4000.</p>
+<h2 id="step-7-working-with-a-simple-api">Step 7: Working with a Simple API</h2>
+<p>You can extend your Node.js application to serve an API:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">users</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">newUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">newUser</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">users</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">users</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newUser</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">newUser</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`API running on http://localhost:</span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Test using a tool like Postman or cURL.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>You have successfully set up and run a basic Node.js application, created an HTTP server, installed external packages, used environment variables, and built a simple API. You can now explore more features like connecting to a database, using authentication, and deploying your app. Happy coding!</p>
+<h1 id="modules-in-nodejs">Modules in Node.js</h1>
+<p>In Node.js, modules provide a way to encapsulate functionality and dependency management. modules are reusable pieces of code that can be imported and exported across different files.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="err">\</span><span class="nx">_req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mf">200</span><span class="p">);</span>
+<span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">8080</span><span class="p">);</span>
+</code></pre></div>
+<p>Here we import the http module to create a simple NodeJS server. The http module is identified by require() via the string “http” which always points to the NodeJS internal module.</p>
+<p>Note how the result of require("http") is handled like every other function invocation. It is basically written to the local constant http.</p>
+<p>Node.js has many built-in modules that are part of the platform and comes with Node.js installation. Here several Nodejs core modules:</p>
+<h2 id="http-module">Http Module</h2>
+<p>This module allows you to create HTTP servers and clients. You can use it to handle incoming requests, send responses, and set up a server. It forms the foundation for web applications built with Node.js.</p>
+<h2 id="fs-module">Fs Module</h2>
+<p>The FS module provides functionality for interacting with the file system. It allows you to read, write, and manipulate files. Key methods include fs.readFile, fs.writeFile, and fs.appendFile. Synchronous methods are also available (e.g., fs.readFileSync).</p>
+<h2 id="path-module">Path Module</h2>
+<p>The Path module is useful for working with file and directory paths in a cross-platform manner. It provides utilities to manipulate paths, like path.join, path.resolve, and path.basename, helping ensure compatibility across different operating systems.</p>
+<h2 id="url-module">Url Module</h2>
+<p>The URL module allows you to parse and format URLs. It provides methods to construct URLs, update query parameters, and work with URL components (like protocol, host, pathname).</p>
+<h2 id="os-module">OS Module</h2>
+<p>This module provides operating system-related utility methods. You can retrieve information related to the OS, such as architecture, free memory, and network interfaces, using functions like os.platform, os.cpuInfo, and os.freemem.</p>
+<h2 id="events-module">Events Module</h2>
+<p>The Events module enables you to work with event-driven programming. It provides an EventEmitter class that allows you to create and manage events within your application, listening and responding to custom events.</p>
+<h1 id="working-with-package-in-nodejs">Working with Package in Node.js</h1>
+<h2 id="what-is-npm-node-package-manager">What is NPM (Node Package Manager)?</h2>
+<p>NPM is the default package manager for the Node.js. It helps the user to manage the JavaScript packages, libraries and dependencies efficiently. NPM enable us to install, update and manage the packages for the Node.js.</p>
+<p>Here are some necessary key commands:</p>
+<ul>
+<li>
+<p><code>npm init</code>: This initializes a new Node.js project by creating a package.json file, which stores information about the project, dependencies, scripts, etc. You can run this command in your project directory, and it will prompt you for project details like name, version, and entry point.</p>
+</li>
+<li>
+<p><code>npm install</code>: This command is primarily used to install packages. You may specify <code>--save</code> to add the package as a dependency in your <code>package.json</code> file or <code>--save-dev</code> for development-only dependencies. For example:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>npm<span class="w"> </span>install<span class="w"> </span>&lt;package-name&gt;<span class="w"> </span>--save<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>production<span class="w"> </span>dependencies<span class="o">)</span>
+<span class="w">   </span>npm<span class="w"> </span>install<span class="w"> </span>&lt;package-name&gt;<span class="w"> </span>--save-dev<span class="w"> </span><span class="o">(</span><span class="k">for</span><span class="w"> </span>development<span class="w"> </span>dependencies<span class="o">)</span>
+</code></pre></div>
+<ul>
+<li>
+<p><code>npm start</code>: This executes the "start" script defined in your package.json file. It's a shorthand that allows you to run the project easily, and you can customize what this script does.</p>
+</li>
+<li>
+<p><code>npm run &lt;script-name&gt;</code>: For any custom scripts that you define in your package.json, you can use this command to execute them. For example, if you have a script called "test", you would run npm run test.</p>
+</li>
+<li>
+<p><code>npm uninstall &lt;package-name&gt;:</code> Removes a package from your project. You can also use flags like --save to update your package.json accordingly.</p>
+</li>
+</ul>
+<h3 id="installing-package-with-npm">Installing Package with npm</h3>
+<p>To install a package using NPM, follow these steps:</p>
+<p>Open the Terminal: Navigate to the project directory where you want to install the package.</p>
+<p>Run the Installation Command: Use the command:</p>
+<p><code>npm install &lt;package-name&gt;</code></p>
+<p>For instance:</p>
+<div class="highlight"><pre><span></span><code>npm install express
+</code></pre></div>
+<p>Updating package.json: Installed packages will automatically be added to your package.json file as dependencies. As of NPM version 5.0.0, packages are saved as dependencies by default, so you no longer need to use <code>--save</code> explicitly.</p>
+<p>Installing Specific Versions: If you need a specific version, you can specify it like this:</p>
+<p><code>npm install &lt;package-name&gt;@&lt;version&gt;</code></p>
+<p>For instance:</p>
+<div class="highlight"><pre><span></span><code>npm install express@4.17.1
+</code></pre></div>
+<p>Check Installed Packages: After installation, you can check the node_modules folder and package.json to confirm that your package was installed successfully.
+Using NPM simplifies managing dependencies in your Node.js projects, making it easy to install, update, and maintain packages. If you want to explore or search for packages, you can visit the official NPM repository page at npmjs.com.</p>
+<h3 id="managing-dependencies-with-packagejson">Managing Dependencies with Package.json</h3>
+<p>Managing dependencies in Node.js with package.json is crucial for maintaining your project's organization and ensuring that all required packages are easily installed across different environments. Here are some key points on how to manage dependencies effectively:</p>
+<ul>
+<li>
+<p>Creating package.json: You can create a package.json file by running: npm init</p>
+</li>
+<li>
+<p>Installing Dependencies: When you install packages using: npm install <package-name></p>
+</li>
+<li>
+<p>Development vs. Production Dependencies: You can differentiate between production and development dependencies:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>Use<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>&lt;package-name&gt;<span class="w"> </span>--save<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>production<span class="w"> </span>dependency.
+
+<span class="w">    </span>Use<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>&lt;package-name&gt;<span class="w"> </span>--save-dev<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>development<span class="w"> </span>dependency,<span class="w"> </span>which<span class="w"> </span>is<span class="w"> </span>used<span class="w"> </span><span class="k">for</span><span class="w"> </span>tools<span class="w"> </span>only<span class="w"> </span>needed<span class="w"> </span>during<span class="w"> </span>development<span class="w"> </span><span class="o">(</span>like<span class="w"> </span>testing<span class="w"> </span>frameworks<span class="o">)</span>.
+</code></pre></div>
+<ul>
+<li>
+<p>The Role of package-lock.json: This file locks the versions of the installed packages, ensuring that installations are reproducible. It’s automatically created and updated when you install packages.</p>
+</li>
+<li>
+<p>Sharing Projects: When you share your project (e.g., on GitHub), you typically don't need to include the node_modules directory. Instead, after cloning the repository, run: npm install. This installs all dependencies listed in package.json on the new machine.</p>
+</li>
+</ul>
+<h1 id="asynchronous-programming-in-nodejs">Asynchronous Programming in Node.js</h1>
+<p>Asynchronous programming is a style of programming where operations do not wait for the previous one to complete before starting. Instead, the operations are started and completed independently, and the program can continue executing other tasks while waiting for specific operation to finish.</p>
+<p>Node.js built on asynchronous, event-driven architecture, is specially designed to excel in high concurrency and responsiveness scenarios. Its non-blocking I/O model, combined with the single-threaded event loop, allows Node.js to efficiently handle thousands of concurrent connections without getting blocked by I/O operations.</p>
+<p>By leveraging asynchronous programming in Node.js, developers can build highly performant and scalable applications. They can offload time-consuming tasks to the background, utilize resources efficiently, and respond to user requests without unnecessary delay.</p>
+<h3 id="understanding-callbacks">Understanding Callbacks</h3>
+<p>In Node.js, many operations are asynchronous by nature. Node.js uses callbacks to handle asynchronous code. A callback function passes an argument to another function and is called once the operation is completed. The callback function handles the result of operation.</p>
+<p>Callback example:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">);</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;utf8&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error reading the file&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;File contents:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;This message will log first, even before file reading completes.&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Explanation:</p>
+<ul>
+<li>
+<p>The readFile() function is asynchronous. It starts reading the file but does not wait for the file to be read before moving on.</p>
+</li>
+<li>
+<p>The callback function is provided as the third argument. Once the file is read, this callback is invoked with either an error (err) or the file data (data).</p>
+</li>
+<li>
+<p>The message “This message will log first...” will appear before the file contents, because readFile() is asynchronous and the event loop continues without waiting for it to finish.</p>
+</li>
+</ul>
+<h3 id="promises-in-nodejs">Promises in Node.js</h3>
+<p>Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises are much cleaner than callbacks and avoid “callback hell”.</p>
+<p>A promise is in one of three states:</p>
+<ul>
+<li>Pending: The initial state before the operation is complete.</li>
+<li>Fulfilled: The operation completed successfully.</li>
+<li>Rejected: The operation failed, and an error occurred.</li>
+</ul>
+<p>Creating and using promises</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
