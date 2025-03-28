@@ -2,14 +2,16 @@ package com.example.product.dto;
 
 import java.time.Instant;
 
+import org.springframework.http.HttpStatus;
+
 public class ApiErrorResponse {
   private String type;
   private String title;
   private String detail;
-  private int status;
+  private HttpStatus status;
   private Instant timestamp;
 
-  public ApiErrorResponse(String type, String title, String detail, int status) {
+  public ApiErrorResponse(String type, String title, String detail, HttpStatus status) {
     this.type = type;
     this.title = title;
     this.detail = detail;
@@ -29,7 +31,7 @@ public class ApiErrorResponse {
     return detail;
   }
 
-  public int getStatus() {
+  public HttpStatus getStatus() {
     return status;
   }
 

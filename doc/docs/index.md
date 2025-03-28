@@ -50,11 +50,11 @@
 
 ## 6. Unit Test
 
-* 6.1. How to setup unit test
+* 6.1. [How to setup unit test](/unittest/#33-unit-test)
 
-* 6.2. How to implement unit test
+* 6.2. [How to implement unit test](/unittest/#333-how-to-implement-unit-test)
 
-* 6.3. How to run unit test
+* 6.3. [How to run unit test](/unittest/#334-how-to-run-unit-test)
 
 ## 7. Build and Deploy
 

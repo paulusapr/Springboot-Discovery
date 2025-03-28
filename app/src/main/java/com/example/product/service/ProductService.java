@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -20,11 +21,17 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return productRepository.findAll()
+                .stream()
+                .filter(product -> !product.isDeleted())
+                .collect(Collectors.toList());
     }
 
     public Optional<Product> findById(long id) {
-        return productRepository.findById(id);
+        return productRepository.findAll()
+                .stream()
+                .filter(product -> product.getId() == id && !product.isDeleted())
+                .findFirst();
     }
 
     public Product save(Product product) {

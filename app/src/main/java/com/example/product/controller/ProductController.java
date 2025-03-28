@@ -8,6 +8,7 @@ import com.example.product.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,7 @@ public class ProductController {
     @Operation(summary = "Get all products", description = "Retrieve all available products")
     public ResponseEntity<ApiResponse<List<Product>>> getAllProducts() {
         List<Product> products = productService.getAllProducts();
-        return ResponseEntity.ok(new ApiResponse<>(200, "Success", products, null));
+        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<>(HttpStatus.OK, "Success", products, null));
     }
 
     @GetMapping("/{id}")
@@ -36,31 +37,37 @@ public class ProductController {
     public ResponseEntity<?> getProductById(@PathVariable long id) {
         Optional<Product> product = productService.findById(id);
         if (product.isPresent()) {
-            return ResponseEntity.ok(new ApiResponse<>(200, "Success", product.get(), null));
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new ApiResponse<>(HttpStatus.OK, "Success", product.get(), null));
         }
-        return ResponseEntity.status(404)
-                .body(new ApiResponse<>(404, "Product Not Found", null,
-                        new ApiErrorResponse("not_found", "Product Not Found", "No product found with id " + id, 404)));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ApiResponse<>(HttpStatus.NOT_FOUND, "Product Not Found", null,
+                        new ApiErrorResponse("not_found", "Product Not Found", "No product found with id " + id,
+                                HttpStatus.NOT_FOUND)));
     }
 
     @PostMapping
     @Operation(summary = "Add a new product", description = "Create a new product")
     public ResponseEntity<ApiResponse<Product>> createProduct(@RequestBody Product product) {
         Product savedProduct = productService.save(product);
-        return ResponseEntity.ok(new ApiResponse<>(201, "Product Created", savedProduct, null));
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ApiResponse<>(HttpStatus.CREATED, "Product Created", savedProduct, null));
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Update a product", description = "Update product by Id")
-    public ResponseEntity<?> updateProduct(@PathVariable Long id, @RequestBody Product newProductData) {
+    public ResponseEntity<ApiResponse<Product>> updateProduct(@PathVariable Long id,
+            @RequestBody Product newProductData) {
         Optional<Product> product = productService.findById(id);
         if (product.isPresent()) {
-            Product updateProduct = productService.updateProduct(id, newProductData);
-            return ResponseEntity.ok(new ApiResponse<>(200, "Updated", updateProduct, null));
+            Product updatedProduct = productService.updateProduct(id, newProductData);
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new ApiResponse<>(HttpStatus.OK, "Updated", updatedProduct, null));
         }
-        return ResponseEntity.status(404)
-                .body(new ApiResponse<>(404, "Product Not Found", null,
-                        new ApiErrorResponse("not_found", "Product Not Found", "No product found with id " + id, 404)));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ApiResponse<>(HttpStatus.NOT_FOUND, "Product Not Found", null,
+                        new ApiErrorResponse("not_found", "Product Not Found", "No product found with id " + id,
+                                HttpStatus.NOT_FOUND)));
     }
 
     @DeleteMapping("/{id}")
@@ -70,15 +77,18 @@ public class ProductController {
         if (product.isPresent()) {
             try {
                 productService.softDelete(id);
-                return ResponseEntity.ok(new ApiResponse<>(200, "Success", "Product deleted successfully", null));
+                return ResponseEntity.noContent().build();
             } catch (Exception e) {
-                return ResponseEntity.status(500)
-                        .body(new ApiResponse<>(500, "Server Error", null,
-                                new ApiErrorResponse("server_error", "Server Error", "id " + id, 404)));
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body(new ApiResponse<>(HttpStatus.INTERNAL_SERVER_ERROR, "Server Error", null,
+                                new ApiErrorResponse("server_error", "Server Error", "id " + id,
+                                        HttpStatus.INTERNAL_SERVER_ERROR)));
             }
         }
-        return ResponseEntity.status(404)
-                .body(new ApiResponse<>(404, "Product Not Found", null,
-                        new ApiErrorResponse("not_found", "Product Not Found", "No product found with id " + id, 404)));
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ApiResponse<>(HttpStatus.NOT_FOUND, "Product Not Found", null,
+                        new ApiErrorResponse("not_found", "Product Not Found", "No product found with id " + id,
+                                HttpStatus.NOT_FOUND)));
     }
 }

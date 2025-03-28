@@ -9,20 +9,22 @@
       
       
       
+        <link rel="prev" href="../buildanddeploy/">
       
-        <link rel="next" href="MVC/">
+      
+        <link rel="next" href="../development/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>SpringBoot Technical Discovery</title>
+        <title>4. Integrated DB - SpringBoot Technical Discovery</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -41,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bibliography" class="md-skip">
+        <a href="#4-integrated-db" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="SpringBoot Technical Discovery" class="md-header__button md-logo" aria-label="SpringBoot Technical Discovery" data-md-component="logo">
+    <a href=".." title="SpringBoot Technical Discovery" class="md-header__button md-logo" aria-label="SpringBoot Technical Discovery" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bibliography
+              4. Integrated DB
             
           </span>
         </div>
@@ -171,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="SpringBoot Technical Discovery" class="md-nav__button md-logo" aria-label="SpringBoot Technical Discovery" data-md-component="logo">
+    <a href=".." title="SpringBoot Technical Discovery" class="md-nav__button md-logo" aria-label="SpringBoot Technical Discovery" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -181,6 +183,69 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bibliography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MVC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Design Pattern
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buildanddeploy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Build and Deploy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
     
       
       
@@ -202,7 +267,7 @@
           
   
   <span class="md-ellipsis">
-    Bibliography
+    4. Integrated DB
     
   </span>
   
@@ -210,11 +275,11 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Bibliography
+    4. Integrated DB
     
   </span>
   
@@ -237,36 +302,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-setup-in-local-machine" class="md-nav__link">
+  <a href="#41-install-the-database-eg-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Setup In local machine
+      4.1. Install the database (E.g: PostgreSQL)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-design-pattern" class="md-nav__link">
+  <a href="#42-database-configuration-eg-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Design Pattern
+      4.2. Database configuration (E.g: PostgreSQL)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-rest-api" class="md-nav__link">
+  <a href="#43-dependencies-eg-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      3. REST API
+      4.3. Dependencies (E.g: PostgreSQL)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-integrated-db" class="md-nav__link">
+  <a href="#44-connecting-with-the-model" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Integrated DB
+      4.4. Connecting with the model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-connect-with-jpa-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5. Connect with JPA Repository
     </span>
   </a>
   
@@ -287,70 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="MVC/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2. Design Pattern
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="buildanddeploy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Build and Deploy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="databaseConnection/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Integrated DB
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="development/" class="md-nav__link">
+      <a href="../development/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -371,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="documentation/" class="md-nav__link">
+      <a href="../documentation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -392,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gettingStarted/" class="md-nav__link">
+      <a href="../gettingStarted/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -413,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="unittest/" class="md-nav__link">
+      <a href="../unittest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -454,36 +465,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-setup-in-local-machine" class="md-nav__link">
+  <a href="#41-install-the-database-eg-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Setup In local machine
+      4.1. Install the database (E.g: PostgreSQL)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-design-pattern" class="md-nav__link">
+  <a href="#42-database-configuration-eg-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Design Pattern
+      4.2. Database configuration (E.g: PostgreSQL)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-rest-api" class="md-nav__link">
+  <a href="#43-dependencies-eg-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      3. REST API
+      4.3. Dependencies (E.g: PostgreSQL)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-integrated-db" class="md-nav__link">
+  <a href="#44-connecting-with-the-model" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Integrated DB
+      4.4. Connecting with the model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-connect-with-jpa-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5. Connect with JPA Repository
     </span>
   </a>
   
@@ -505,91 +525,171 @@
 
 
 
-<h1 id="bibliography">Bibliography</h1>
-<h2 id="1-setup-in-local-machine">1. Setup In local machine</h2>
+<h1 id="4-integrated-db">4. Integrated DB</h1>
+<h2 id="41-install-the-database-eg-postgresql">4.1. Install the database (E.g: PostgreSQL)</h2>
 <ul>
-<li>
-<p>1.1. <a href="/gettingStarted/#11-prerequisite">Prerequisite</a></p>
-</li>
-<li>
-<p>1.2. <a href="/gettingStarted/#12-how-created-project">How Created Project</a></p>
-</li>
+<li>Step 1 -&gt; <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">Download PostgreSQL</a></li>
+<li>Step 2 -&gt; Run <code>pgAdmin</code> and start the server
+<img alt="Alt text" src="../images/installDB1.png" /></li>
+<li>Step 3 -&gt; Create new database
+<img alt="Alt text" src="../images/installDB2.png" /></li>
+<li>Step 4 -&gt; Enter <code>database name</code> and <code>save</code>
+<img alt="Alt text" src="../images/installDB3.png" /></li>
+<li>Step 5 -&gt; Right Clicks on <code>Tables</code> then <code>Create -&gt; Table</code>
+<img alt="Alt text" src="../images/installDB4.png" /></li>
+<li>Step 6 -&gt; Add new <code>tables</code> to database (E.g: product)
+<img alt="Alt text" src="../images/installDB5.png" /></li>
+<li>Step 7 -&gt; Tables has been added then go to <code>Query Tool</code>
+<img alt="Alt text" src="../images/installDB6.png" /></li>
+<li>Step 8 -&gt; Enter your <code>Query</code> then executed
+<img alt="Alt text" src="../images/installDB7.png" /></li>
 </ul>
-<h2 id="2-design-pattern">2. Design Pattern</h2>
+<h2 id="42-database-configuration-eg-postgresql">4.2. Database configuration (E.g: PostgreSQL)</h2>
 <ul>
-<li>
-<p>2.1. <a href="/MVC">MVC</a></p>
-</li>
-<li>
-<p>2.2 <a href="/MVC/#22-how-to-create-a-component">How To Created Component</a></p>
-</li>
-<li>
-<p>2.3. <a href="/MVC/#231-creating-the-model">Created Model</a></p>
-</li>
-<li>
-<p>2.4. <a href="/MVC/#232-creating-the-view">Created View</a></p>
-</li>
-<li>
-<p>2.5. <a href="/MVC/#233-creating-the-controller">Created Controller</a></p>
-</li>
+<li>Apply this configuration to <code>application.properties</code>
+<div class="highlight"><pre><span></span><code># JDBC URL for PostgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/inventory_db
+
+# PostgreSQL username and password
+spring.datasource.username=postgres
+spring.datasource.password=admin
+
+# Set the JPA dialect to PostgreSQL
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# Enable JPA/Hibernate automatic DDL (optional: update your database schema on app start)
+spring.jpa.hibernate.ddl-auto=update
+
+# Show SQL queries in the console (optional)
+spring.jpa.show-sql=true
+
+# Format SQL queries (optional)
+spring.jpa.properties.hibernate.format_sql=true
+</code></pre></div></li>
 </ul>
-<h2 id="3-rest-api">3. REST API</h2>
+<h2 id="43-dependencies-eg-postgresql">4.3. Dependencies (E.g: PostgreSQL)</h2>
 <ul>
-<li>
-<p>3.1. <a href="/development/#3-development-api">Development API</a></p>
-</li>
-<li>
-<p>3.2. <a href="/development/#31-created-method-get">Created Method Get</a></p>
-</li>
-<li>
-<p>3.3. <a href="/development/#32-created-method-post">Created Method Post</a></p>
-</li>
-<li>
-<p>3.4. <a href="/development/#33-created-method-put">Created Method Put</a></p>
-</li>
-<li>
-<p>3.5. <a href="/development/#34-created-method-delete">Created Method Delete</a></p>
-</li>
+<li>Add new dependencies to <code>pom.xml</code>
+<div class="highlight"><pre><span></span><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+    &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+    &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre></div></li>
 </ul>
-<h2 id="4-integrated-db">4. Integrated DB</h2>
+<h2 id="44-connecting-with-the-model">4.4. Connecting with the model</h2>
 <ul>
-<li>
-<p>4.1. <a href="/databaseConnection/#install-the-database-eg-postgresql">Install the database (E.g: PostgreSQL)</a></p>
-</li>
-<li>
-<p>4.2. <a href="/databaseConnection/#database-configuration-eg-postgresql">Database configuration (E.g: PostgreSQL)</a></p>
-</li>
-<li>
-<p>4.3. <a href="/databaseConnection/#dependencies-eg-postgresql">Dependencies (E.g: PostgreSQL)</a></p>
-</li>
-<li>
-<p>4.4. <a href="/databaseConnection/#connecting-with-the-model">Connecting with the model</a></p>
-</li>
-<li>
-<p>4.5. <a href="/databaseConnection/#connect-with-jpa-repository">Connect with JPA Repository</a></p>
-</li>
+<li>Import packages
+<div class="highlight"><pre><span></span><code>import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+</code></pre></div></li>
+<li>How to use <code>@Entity</code> &amp; <code>@Table</code>, table name of the database (e.g: product)
+<div class="highlight"><pre><span></span><code>@Entity
+@Table(name=&quot;product&quot;)
+public class Product {
+}
+</code></pre></div></li>
+<li>Change <code>Id</code> to <code>primary key</code> and make it <code>auto generate</code> (! Important)
+<div class="highlight"><pre><span></span><code>public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+}
+</code></pre></div></li>
+<li>Add constructor (! Important)
+<div class="highlight"><pre><span></span><code>public class Product {
+    public Product() {
+    }
+
+    // Other constructors or methods if necessary
+}
+</code></pre></div></li>
 </ul>
-<h1 id="5-documentation">5. Documentation</h1>
+<h2 id="45-connect-with-jpa-repository">4.5. Connect with JPA Repository</h2>
 <ul>
-<li>
-<p>5.1. <a href="/documentation">Prerequisite Swagger</a></p>
-</li>
-<li>
-<p>5.2. <a href="/documentation/#42-how-to-implement-swagger">How to Implementation Swagger</a></p>
-</li>
+<li>Step 1 -&gt; Create Repository
+<div class="highlight"><pre><span></span><code>package com.example.product.repository;
+
+import com.example.product.model.Product;
+import org.springframework.stereotype.Repository;
+
+@Repository
+
+public class ProductRepository {
+}
+</code></pre></div></li>
+<li>Step 2 -&gt; JpaRepository Implementation<ul>
+<li>Change class to interface and extends with <code>JpaRepository</code>
+<div class="highlight"><pre><span></span><code>import com.example.product.model.Product;
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+@Repository
+
+public interface ProductRepository extends JpaRepository&lt;Product, Long&gt; {
+    // Other constructors or methods if necessary
+}
+</code></pre></div></li>
 </ul>
-<h1 id="6-unit-test">6. Unit Test</h1>
-<h3 id="61-how-to-setup-unit-test">6.1. <a href="/unittest/#33-unit-test">How to setup unit test</a></h3>
-<h3 id="62-how-to-implement-unit-test">6.2. <a href="/unittest/#333-how-to-implement-unit-test">How to implement unit test</a></h3>
-<h3 id="63-how-to-run-unit-test">6.3. <a href="/unittest/#334-how-to-run-unit-test">How to run unit test</a></h3>
-<h1 id="7-build-and-deploy">7. Build and Deploy</h1>
-<ul>
-<li>
-<p>7.1. Prerequisite Web Server</p>
 </li>
-<li>
-<p>7.2. How to Install/Deploy Our Service to Web Server</p>
-</li>
+<li>Step 3 -&gt; Some constructors will be automatically added to the repository
+<div class="highlight"><pre><span></span><code>List&lt;Product&gt; findAll(String name);
+List&lt;Product&gt; findById(long id);
+</code></pre></div></li>
+<li>Step 4 -&gt; Example Product Service
+<div class="highlight"><pre><span></span><code>package com.example.product.service;
+
+import com.example.product.model.Product;
+import org.springframework.stereotype.Service;
+import com.example.product.repository.ProductRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProductService {
+
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
+    public List&lt;Product&gt; getAllProducts() {
+        return productRepository.findAll();
+    }
+
+    public Optional&lt;Product&gt; findById(long id) {
+        return productRepository.findById(id);
+    }
+}
+</code></pre></div></li>
+<li>Step 5 -&gt; Enabled <code>JpaRepository</code> &amp; <code>Entity</code> to RootApp (e.g: ProductApp.java)
+<div class="highlight"><pre><span></span><code>package com.example.product;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@SpringBootApplication
+@EnableJpaRepositories(&quot;com.example.product.repository&quot;)
+@EntityScan(&quot;com.example.product.model&quot;)
+public class ProductApp {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ProductApp.class, args);
+    }
+}
+</code></pre></div></li>
 </ul>
 
 
@@ -637,10 +737,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

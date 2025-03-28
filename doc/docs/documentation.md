@@ -1,6 +1,6 @@
-# 5. Documentation
+# 6. Documentation
 
-## 4.1. Prerequisite Swagger
+## 6.1. Prerequisite Swagger
 
 Swagger is an API documentation tool that allows developers to interact with and test APIs using a user-friendly interface. Before implementing Swagger in a Spring Boot project, ensure the following prerequisites are met:
 
@@ -11,7 +11,7 @@ Swagger is an API documentation tool that allows developers to interact with and
 - **Springfox or OpenAPI**: Swagger implementation libraries.
 - **Java 11+**: Recommended for compatibility and performance.
 
-## 4.2. How to Implement Swagger
+## 6.2. How to Implement Swagger
 
 To integrate Swagger into a Spring Boot project, follow these steps:
 
@@ -113,7 +113,7 @@ After starting your Spring Boot application, access the Swagger UI at:
 - **Swagger UI**: `http://localhost:8080/swagger-ui/index.html`
 - **OpenAPI JSON**: `http://localhost:8080/v3/api-docs`
 
-## 4.3. Troubleshooting
+## 6.3. Troubleshooting
 
 **Issue: 404 Not Found on `/v3/api-docs`**
 
